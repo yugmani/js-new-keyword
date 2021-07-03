@@ -27,3 +27,33 @@ function B() {
 let a = new A();
 let b = new B();
 console.log(a == b); // true
+
+// 2. Create new Calculator
+
+// Create a constructor function Calculator that creates objects with 3 methods:
+
+// read() asks for two values using prompt and remembers them in object properties.
+// sum() returns the sum of these properties.
+// mul() returns the multiplication product of these properties.
+
+function Calculator() {
+  this.read = function() {
+    this.x = +prompt('First number: ');
+    this.y = +prompt('Second number: ');
+  };
+
+  this.sum = function() {
+    return this.x + this.y;
+  };
+
+  this.mul = function() {
+    return this.x * this.y;
+  };
+}
+
+let calculator1 = new Calculator();
+
+// console.log(calculator1.read());  // if 11, 22 entered
+// console.log(calculator1.sum());  // 33
+// console.log(calculator1.mul());  // 242
+
