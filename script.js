@@ -68,3 +68,31 @@ let user = new function() {
 }();
 
 // This constructor can't be called again, because it is not saved anywhere, just created and called. So this trick aims to encapsulate the code that constructs the single object, without future reuse.
+
+// ***** Omitting parentheses *******
+
+// By the way, we can omit parentheses after new, if it has no arguments:
+
+let user5 = new User(); // parenthesee is required which is same as `let user5 = new User();
+
+// Omitting parentheses here is not considered a “good style”, but the syntax is permitted by specification.
+
+// ********* Methods in constructor ***********
+
+// Using constructor functions to create objects gives a great deal of flexibility. The constructor function may have parameters that define how to construct the object, and what to put in it.
+
+// Of course, we can add to this not only properties, but methods as well.
+
+// For instance, new User(name) below creates an object with the given name and the method sayHi:
+
+function Employee(name) {
+  this.name = name;
+
+  this.sayHi = function() {
+    console.log('My name is: ' + this.name);
+  };
+}
+
+let employee1 = new Employee('Benjamin');
+console.log(employee1.sayHi()); // My name is: Benjamin
+
